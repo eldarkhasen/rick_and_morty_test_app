@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:rick_and_morty_app/system/bloc/characters_cubit.dart';
 import 'package:rick_and_morty_app/system/ui/pages/home_page.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           create: (context) => locatorService<CharactersCubit>()..loadCharacters(),
         ),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'Flutter Rick And Morty app',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

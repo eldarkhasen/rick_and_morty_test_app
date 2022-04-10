@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:rick_and_morty_app/data/entities/character.dart';
+import 'package:rick_and_morty_app/system/ui/pages/character_detail_page.dart';
 import 'package:rick_and_morty_app/system/ui/widgets/small_circle_image.dart';
 
 class CharacterTile extends StatelessWidget {
@@ -15,7 +17,9 @@ class CharacterTile extends StatelessWidget {
       child: Material(
         elevation: 0,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Get.to(CharacterDetailsPage(character: character));
+          },
           child: Ink(
             child: ListTile(
               leading: Builder(
